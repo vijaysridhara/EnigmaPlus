@@ -1,0 +1,258 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>VijaySridhara.Applications</RootNamespace>
+    <MyType>WindowsForms</MyType>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DocumentationFile>Pournami.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineDebug>false</DefineDebug>
+    <DocumentationFile>Pournami.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>projicon.ico</ApplicationIcon>
+    <AssemblyName>Enigma+</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DocumentationFile>Pournami.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DocumentationFile>Pournami.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Core\Controls\DefectForm.Designer.vb">
+      <DependentUpon>DefectForm.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Controls\DefectForm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Core\Controls\IssueForm.Designer.vb">
+      <DependentUpon>IssueForm.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Controls\IssueForm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Core\Controls\TaskForm.Designer.vb">
+      <DependentUpon>TaskForm.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Controls\TaskForm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Core\Controls\WorkItems.Designer.vb">
+      <DependentUpon>WorkItems.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Controls\WorkItems.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Core\Forms\AboutBox1.Designer.vb">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Forms\ConfigurationParms.Designer.vb">
+      <DependentUpon>ConfigurationParms.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Forms\FileCompare.Designer.vb">
+      <DependentUpon>FileCompare.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Forms\FolderCompare.designer.vb">
+      <DependentUpon>FolderCompare.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Forms\Comparator.designer.vb">
+      <DependentUpon>Comparator.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Forms\FrequentTasks.Designer.vb">
+      <DependentUpon>FrequentTasks.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Forms\LenDelimitedtoTab.Designer.vb">
+      <DependentUpon>LenDelimitedtoTab.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Forms\CSVtoInsert.Designer.vb">
+      <DependentUpon>CSVtoInsert.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Forms\QuickWorkItem.Designer.vb">
+      <DependentUpon>QuickWorkItem.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Forms\StandbyForm.Designer.vb">
+      <DependentUpon>StandbyForm.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Forms\WorkItemDetails.Designer.vb">
+      <DependentUpon>WorkItemDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Update="DataForms\Forms\Blobber.designer.vb">
+      <DependentUpon>Blobber.vb</DependentUpon>
+    </Compile>
+    <Compile Update="DataForms\Forms\Blobber.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="DataForms\Forms\ClosingMsg.Designer.vb">
+      <DependentUpon>ClosingMsg.vb</DependentUpon>
+    </Compile>
+    <Compile Update="DataForms\Forms\ConfirmImport.Designer.vb">
+      <DependentUpon>ConfirmImport.vb</DependentUpon>
+    </Compile>
+    <Compile Update="DataForms\Forms\DataForm.Designer.vb">
+      <DependentUpon>DataForm.vb</DependentUpon>
+    </Compile>
+    <Compile Update="DataForms\Forms\DataForm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="DataForms\Forms\DataShow.Designer.vb">
+      <DependentUpon>DataShow.vb</DependentUpon>
+    </Compile>
+    <Compile Update="DataForms\Forms\ImportCSV.Designer.vb">
+      <DependentUpon>ImportCSV.vb</DependentUpon>
+    </Compile>
+    <Compile Update="DataForms\Forms\MailSelect.Designer.vb">
+      <DependentUpon>MailSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Update="DataForms\Forms\PournamiSettings.Designer.vb">
+      <DependentUpon>PournamiSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Update="DataForms\Forms\Quickfix.Designer.vb">
+      <DependentUpon>Quickfix.vb</DependentUpon>
+    </Compile>
+    <Compile Update="DataForms\Forms\ReportDef.Designer.vb">
+      <DependentUpon>ReportDef.vb</DependentUpon>
+    </Compile>
+    <Compile Update="DataForms\Forms\ReportUI.Designer.vb">
+      <DependentUpon>ReportUI.vb</DependentUpon>
+    </Compile>
+    <Compile Update="DataForms\Forms\ReportUI.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Core\Controls\FileListBox.Designer.vb">
+      <DependentUpon>FileListBox.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Controls\FileListBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Core\Forms\MultiSave.Designer.vb">
+      <DependentUpon>MultiSave.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Classes\MyTabControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Core\Forms\NewFile.Designer.vb">
+      <DependentUpon>NewFile.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Forms\NewFolder2.designer.vb">
+      <DependentUpon>NewFolder2.vb</DependentUpon>
+    </Compile>
+    <Compile Update="Core\Classes\FileTree.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Update="Core\Buntilla\Buntilla.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Core\Forms\SplashScreen1.Designer.vb">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Update="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataForms\PFDFTemplate.txt" />
+    <Content Include="moon64.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FastColoredTextBox-net5" Version="2.17.30.100" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.116" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CollapsableToolbox\CollapsableToolbox.vbproj" />
+    <ProjectReference Include="..\..\HTMLPublisher\HTMLPublisher\HTMLPublisher.vbproj" />
+    <ProjectReference Include="..\..\PForms\PForms\PForms.vbproj" />
+    <ProjectReference Include="..\..\VJRichText\VJRichText\RichTextPlus.vbproj" />
+    <ProjectReference Include="..\..\YearMonth\YearMonth\YearMonth.vbproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
