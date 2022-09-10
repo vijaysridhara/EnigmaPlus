@@ -1,0 +1,19 @@
+<doc name="ShellScript" extensions="Shell script files(*.sh)|*.sh">
+    <brackets  />
+    <style name="Maroon" color="Maroon" fontStyle="Bold" />
+	    <style name="Green" color="Green" fontStyle="Bold,Italic" />
+    <style name="Blue" color="Blue"/>
+    <style name="Red" color="Red" />
+	<style name="Orange" color="#ff9000" />
+	<style name="Pink" color="#ff9000" />
+    <rule name="bracketrule" style="Maroon">[\(\[\{\}\]\):]?</rule>
+	<rule name="keyrule" style="Blue">\b(echo|if|then|elif|fi|else|while|do|done|for|in|case|esac|rm|db2)\b</rule>
+		<rule name="variablerule" style="Red">(\$\b[a-zA-Z0-9_]+)\b</rule>
+		<rule name="stringrule" style="Orange">('\b.+\b')</rule>
+		<rule name="stringrule2" style="Orange">"(\b.+\b)"</rule>
+	
+		<rule  name="commentrule" style="Green">\#</rule>
+		<rule  name="commentrule2" style="Red">\b-(eq|le|ge|gt|lt)\b</rule>
+	<rule name="commandrule" style="Pink">(\`.+\`)</rule>
+	<autocomplete>echo,else,elif,esac,case,for,do,done,db2</autocomplete>
+</doc>

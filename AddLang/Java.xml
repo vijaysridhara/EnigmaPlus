@@ -1,0 +1,12 @@
+<doc name="Java" extensions="Java files(*.java)|*.java">
+    <brackets  />
+    <style name="Maroon" color="Maroon" fontStyle="Bold" />
+	    <style name="Green" color="Green" fontStyle="Italic" />
+    <style name="Blue" color="Blue" fontStyle="Bold"/>
+    <style name="Red" color="Red" backColor="#f5f5e5" />
+    <rule name="bracketrule" style="Maroon">[\(\[\{\}\]\):]?</rule>
+	<rule name="stringrule" style="Red">\b('.*'|".*")\b</rule>
+		<rule  name="commentrule" style="Green">//.*</rule>
+		<rule  name="commentrule2" style="Green">/\*[.\n]*\*\\</rule>
+	<rule name="keyrule" style="Blue">\b(abstract|assert|boolean|break|byte|case|catch|char|class|const|continue|do|double|else|enum|extends|final|finally|float|for|goto|if|implements|import|instanceof|int|interface|long|native|new|package|private|protected|public|return|short|static|strictfp|super|switch|synchronized|this|throw|throws|transient|try|void|volatile|while)\b</rule>
+</doc>

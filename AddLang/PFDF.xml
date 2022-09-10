@@ -1,0 +1,12 @@
+<doc name="PournamiForm" extensions="Pournami Form files(*.pfdf)|*.pfdf">
+    <brackets  />
+    <style name="Maroon" color="Maroon" fontStyle="Bold" />
+	    <style name="Green" color="Green" fontStyle="Italic" />
+    <style name="Blue" color="Blue"/>
+    <style name="Red" color="Red" backColor="#f5f5e5" />
+    <rule name="bracketrule" style="Maroon">[\(\[\{\}\]\):]?</rule>
+	<rule name="keyrule" style="Blue">\b(META|FORMDEF|FIELD|REPORT|USER|LASTUPT)\b</rule>
+		<rule  name="commentrule" style="Green">#.*</rule>
+	<rule name="keyrule2" style="Red">\b(COMBO|TEXT|MULTILINE|FILE|PICTURE|CHECK|RADIO|LABEL|LIST|ROCOMBO|DATE|TIMESTAMP|SERIAL|NUMERIC|LARGETEXT|MONTHYEAR|RICHTEXT)\b</rule>
+	<autocomplete>FORMDEF,COMBO,LIST,ROCOMBO,FIELD,REPORT,TEXT,MULTILINE,FILE,PICTURE,CHECK,RADIO,LABEL,USER,LASTUPT,SERIAL,NUMERIC,LARGETEXT,RICHTEXT</autocomplete>
+</doc>
