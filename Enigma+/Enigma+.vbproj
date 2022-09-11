@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>WinExe</OutputType>
     <StartupObject>Sub Main</StartupObject>
@@ -194,9 +194,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Update="Core\Buntilla\Buntilla.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Update="Core\Buntilla\Buntilla.vb" />
     <Compile Update="Core\Forms\SplashScreen1.Designer.vb">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
     </Compile>
@@ -238,7 +236,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="FastColoredTextBox-net5" Version="2.17.30.100" />
+    <PackageReference Include="FastColoredTextBox.Net5" Version="2.16.26" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.116" />
   </ItemGroup>
   <ItemGroup>

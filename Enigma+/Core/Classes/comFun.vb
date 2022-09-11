@@ -18,7 +18,6 @@ Module comFun
     Public LangColl As New Dictionary(Of String, String)
     Public UserDocuments As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\Enigma+"
     Public UserTempData As String = UserDocuments & "\Data"
-    Public UserTasksFile As String = UserDocuments & "\Data\Tasks.db"
     Public UserWorkItems As String = UserDocuments & "\Data\IsTaBu.db3"
     Public Sub DE(ByVal ex As Exception)
         MsgBox(ex.Message, MsgBoxStyle.Critical)

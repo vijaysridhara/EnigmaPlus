@@ -17,7 +17,7 @@ Imports FastColoredTextBoxNS
 
 
 Public Class Buntilla
-    Inherits FastColoredTextBoxNS.FastColoredTextBox
+    Inherits FastColoredTextBox
     Private _filename As String = "Untitled"
     Private _filepath As String
     Event FileModified(ByVal sender As Object)
@@ -69,11 +69,15 @@ Public Class Buntilla
     End Property
     Private ctxMenu As New ContextMenuStrip
     Public Sub New()
-        MyBase.New()
+
+        MyBase.New
+
 
         InitializeComponent()
 
-        Me.Font = New Font("Courier new", defaultZoomFomt)
+#Disable Warning CA1416 ' Validate platform compatibility
+        Font = New Font("Courier new", defaultZoomFomt)
+#Enable Warning CA1416 ' Validate platform compatibility
         Dim newdp As ToolStripItem
         For i As Integer = 0 To 9
             newdp = New ToolStripMenuItem
@@ -149,6 +153,7 @@ Public Class Buntilla
     End Sub
 
     Private Sub ContextMenuClicked(ByVal sender As Object, ByVal e As EventArgs)
+
         Select Case sender.tag
             Case 0
                 Me.Cut()
@@ -190,7 +195,7 @@ Public Class Buntilla
         End Select
     End Sub
 
-  
+
 
     Private Sub Buntilla_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
         If e.Control Then
@@ -202,6 +207,7 @@ Public Class Buntilla
 
 
         End If
+
 
         If e.KeyCode = Keys.Left Then
             _cursorloc.X = Selection.Start.iChar
@@ -245,14 +251,14 @@ Public Class Buntilla
         End If
     End Sub
 
- 
+
 
     Private Sub Buntilla_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseUp
         _cursorloc.X = Selection.Start.iChar
         _cursorloc.Y = Selection.Start.iLine
         RaiseEvent PlaceChanged(_cursorloc)
     End Sub
- 
+
 
     Private Sub Buntilla_SelectionChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.SelectionChanged
 
@@ -266,18 +272,19 @@ Public Class Buntilla
         If isloadingfile Then Exit Sub
         _isDirty = True
         RaiseEvent FileModified(Me)
-        _cursorloc.X = Selection.Start.iChar
-        _cursorloc.Y = Selection.Start.iLine + 1
+        '_cursorloc.X = Selection.Start.iChar
+        '_cursorloc.Y = Selection.Start.iLine + 1
         RaiseEvent PlaceChanged(_cursorloc)
     End Sub
     Private isloadingfile As Boolean
     Public Overloads Sub LoadFile(ByVal fname As String)
         Try
             isloadingfile = True
-            Dim sr As New IO.StreamReader(fname)
-            Me.Text = sr.ReadToEnd
-            sr.Close()
-            sr.Dispose()
+            'Dim sr As New IO.StreamReader(fname)
+            'Me.Text = sr.ReadToEnd
+            'sr.Close()
+            'sr.Dispose()
+            OpenFile(fname, System.Text.Encoding.UTF8)
             'MyBase.OpenBindingFile(fname, New System.Text.ASCIIEncoding)
 
             _filepath = fname
@@ -351,11 +358,12 @@ Public Class Buntilla
     Public Overloads Sub SaveFile(ByVal fname As String)
         Try
 
-            Dim sw As New IO.StreamWriter(fname)
-            'MyBase.SaveToFile(fname, New System.Text.ASCIIEncoding)
-            sw.Write(Me.Text)
-            sw.Close()
-            sw.Dispose()
+            'Dim sw As New IO.StreamWriter(fname)
+            ''MyBase.SaveToFile(fname, New System.Text.ASCIIEncoding)
+            'sw.Write(Me.Text)
+            'sw.Close()
+            'sw.Dispose()
+            SaveToFile(fname, System.Text.Encoding.UTF8)
             _isDirty = False
             _filepath = fname
             RaiseEvent FileSaved(Me)

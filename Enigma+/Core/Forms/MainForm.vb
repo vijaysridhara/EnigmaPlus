@@ -16,7 +16,7 @@
 '***********************************************************************
 
 Imports VijaySridhara.Libraries
-Imports VitalLogic.Libraries
+Imports FastColoredTextBoxNS
 
 Public Class MainForm
     Private WithEvents sc As Buntilla 'This name is weird, but started projext with Scintilla, later changed to FCTB
