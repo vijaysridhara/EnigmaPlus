@@ -2132,10 +2132,18 @@ innerexit:
 
     Private Sub FormsHelpToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FormsHelpToolStripMenuItem.Click
         Try
-            Process.Start("PournamiForms.pdf")
+            Dim fpath As String = "PournamiForms.pdf"
+            Dim ProcessApplication As String = "iexplore"
+            Dim ProcessArguement As String = fpath
+
+            Dim MyPDF As New ProcessStartInfo(ProcessApplication)
+            MyPDF.Arguments = ProcessArguement
+
+            Process.Start(MyPDF)
         Catch ex As Exception
             DE(ex)
         End Try
+
     End Sub
 
     Private Sub CopyTopersonalToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CopyTopersonalToolStripMenuItem.Click
