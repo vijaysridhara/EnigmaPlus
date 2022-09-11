@@ -4,7 +4,14 @@
 
 Enigma+ is not just a syntax highlighting editor for day to day use like notepad++, but also Task, Defect, Issue manager and other various functions
 
+## Additional repositories needed for build
+https://github.com/vijaysridhara/YearMonth
+https://github.com/vijaysridhara/VJRichText
+https://github.com/vijaysridhara/PForms
+https://github.com/vijaysridhara/HTMLPublisher
+https://github.com/vijaysridhara/CollapsableToolbox
 
+## Features
 Syntax highlighting editor for popular programming languages.
 
 Ability to create forms of your design (For ex Password manager, Code library, Phonebook etc)
