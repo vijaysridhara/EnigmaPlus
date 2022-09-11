@@ -6,9 +6,13 @@ Enigma+ is not just a syntax highlighting editor for day to day use like notepad
 
 ## Additional repositories needed for build
 https://github.com/vijaysridhara/YearMonth
+
 https://github.com/vijaysridhara/VJRichText
+
 https://github.com/vijaysridhara/PForms
+
 https://github.com/vijaysridhara/HTMLPublisher
+
 https://github.com/vijaysridhara/CollapsableToolbox
 
 ## Features
