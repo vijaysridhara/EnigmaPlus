@@ -4,7 +4,6 @@
 
 Enigma+ is not just a syntax highlighting editor for day to day use like notepad++, but also Task, Defect, Issue manager and other various functions
 
-Source code available on Git: https://github.com/vijaysridhara/EnigmaPlus
 
 Syntax highlighting editor for popular programming languages.
 
