@@ -913,7 +913,7 @@ Public Class MainForm
             Dim SN As TreeNode = TreeView2.SelectedNode
             Dim DIRNAME As String
             If SN.ImageIndex = 0 Then
-                DIRNAME = IO.Path.GetDirectoryName(SN.Tag) & IO.Path.GetFileNameWithoutExtension(SN.Tag)
+                DIRNAME = IO.Path.GetDirectoryName(SN.Tag) & "\" & IO.Path.GetFileNameWithoutExtension(SN.Tag)
             ElseIf SN.ImageIndex <= 2 Then
                 DIRNAME = SN.Tag
             Else
@@ -1204,7 +1204,7 @@ Public Class MainForm
             Dim SN As TreeNode = TreeView2.SelectedNode
             Dim DIRNAME As String
             If SN.ImageIndex = 0 Then
-                DIRNAME = IO.Path.GetDirectoryName(SN.Tag) & IO.Path.GetFileNameWithoutExtension(SN.Tag)
+                DIRNAME = IO.Path.GetDirectoryName(SN.Tag) & "\" & IO.Path.GetFileNameWithoutExtension(SN.Tag)
             ElseIf SN.ImageIndex <= 2 Then
                 DIRNAME = SN.Tag
             Else
@@ -1218,7 +1218,7 @@ Public Class MainForm
                 If .ShowDialog() = DialogResult.OK Then
                     WriteStatusLable("Add existing file...")
                     IO.File.Copy(.FileName, DIRNAME & "\" & IO.Path.GetFileName(.FileName))
-                    Dim TN As New TreeNode(IO.Path.GetFileName(DIRNAME & "\" & .FileName))
+                    Dim TN As New TreeNode(IO.Path.GetFileName(.FileName))
                     TN.ImageKey = Geticonkey(.FileName)
                     TN.SelectedImageKey = TN.ImageKey
                     TN.Tag = DIRNAME & "\" & IO.Path.GetFileName(.FileName)
@@ -2057,6 +2057,7 @@ innerexit:
                 ds.LoadContents()
                 If ds.DataForm1.UserDefined = False Then
                     ds.Close()
+                    ds.Dispose()
 
                 End If
             End If

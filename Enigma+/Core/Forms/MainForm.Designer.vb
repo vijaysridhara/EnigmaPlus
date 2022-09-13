@@ -474,40 +474,40 @@ Partial Class MainForm
         'ContentsToolStripMenuItem
         '
         Me.ContentsToolStripMenuItem.Name = "ContentsToolStripMenuItem"
-        Me.ContentsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ContentsToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
         Me.ContentsToolStripMenuItem.Text = "&Contents"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
         Me.AboutToolStripMenuItem.Text = "&About"
         '
         'FormsHelpToolStripMenuItem
         '
         Me.FormsHelpToolStripMenuItem.Name = "FormsHelpToolStripMenuItem"
-        Me.FormsHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.FormsHelpToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
         Me.FormsHelpToolStripMenuItem.Text = "&Forms help"
         '
         'PerspectiveToolStripMenuItem
         '
         Me.PerspectiveToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditorToolStripMenuItem, Me.WorkItemsToolStripMenuItem1})
         Me.PerspectiveToolStripMenuItem.Name = "PerspectiveToolStripMenuItem"
-        Me.PerspectiveToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PerspectiveToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
         Me.PerspectiveToolStripMenuItem.Text = "&Perspective"
         '
         'EditorToolStripMenuItem
         '
         Me.EditorToolStripMenuItem.Name = "EditorToolStripMenuItem"
         Me.EditorToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.EditorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EditorToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.EditorToolStripMenuItem.Text = "&Editor"
         '
         'WorkItemsToolStripMenuItem1
         '
         Me.WorkItemsToolStripMenuItem1.Name = "WorkItemsToolStripMenuItem1"
         Me.WorkItemsToolStripMenuItem1.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.W), System.Windows.Forms.Keys)
-        Me.WorkItemsToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.WorkItemsToolStripMenuItem1.Size = New System.Drawing.Size(179, 22)
         Me.WorkItemsToolStripMenuItem1.Text = "&Work items"
         '
         'PrintPreviewDialog1
@@ -675,6 +675,7 @@ Partial Class MainForm
         '
         Me.TreeView1.ContextMenuStrip = Me.ctxForms
         Me.TreeView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TreeView1.HideSelection = False
         Me.TreeView1.ImageIndex = 0
         Me.TreeView1.ImageList = Me.ImageList3
         Me.TreeView1.Location = New System.Drawing.Point(0, 0)

@@ -35,9 +35,11 @@ Public Class DataForm
     End Property
     Public Sub Cleanup()
         On Error Resume Next
-        rdr.Close()
-        conn.Close()
-        conn.Dispose()
+        If cmd IsNot Nothing Then cmd.Dispose()
+        If rdr IsNot Nothing Then rdr.Close()
+        If conn IsNot Nothing Then conn.Close() : conn.Dispose()
+
+
     End Sub
     Private WithEvents compDef As New Initiator
     Public Sub InitiateForm(ByVal ffile As String)
@@ -58,6 +60,11 @@ Public Class DataForm
                     MsgBox("Impex enabled form requires a user to own the data", MsgBoxStyle.Exclamation)
 
                     _userdefined = False
+                    compDef = Nothing
+                    Cleanup()
+
+
+
                     Exit Sub
                 Else
                     conn = New SQLiteConnection(connString)

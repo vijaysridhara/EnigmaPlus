@@ -58,6 +58,8 @@ Friend Class DataShow
         cf.Label1.Refresh()
         DataForm1.Vacuum()
         DataForm1.Cleanup()
+        Me.Dispose()
+
     End Sub
 
     Private Sub DataForm1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DataForm1.Load
