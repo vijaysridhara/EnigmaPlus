@@ -553,13 +553,14 @@ Partial Class MainForm
         '
         'tabMain
         '
+        Me.tabMain.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
         Me.tabMain.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tabMain.ImageList = Me.ImageList4
         Me.tabMain.Location = New System.Drawing.Point(289, 0)
         Me.tabMain.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.tabMain.Name = "tabMain"
         Me.tabMain.SelectedIndex = 0
-        Me.tabMain.Size = New System.Drawing.Size(741, 430)
+        Me.tabMain.Size = New System.Drawing.Size(741, 363)
         Me.tabMain.TabIndex = 12
         Me.tabMain.Visible = False
         '
@@ -574,7 +575,7 @@ Partial Class MainForm
         'Splitter3
         '
         Me.Splitter3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Splitter3.Location = New System.Drawing.Point(289, 430)
+        Me.Splitter3.Location = New System.Drawing.Point(289, 363)
         Me.Splitter3.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Splitter3.Name = "Splitter3"
         Me.Splitter3.Size = New System.Drawing.Size(741, 3)
@@ -583,13 +584,14 @@ Partial Class MainForm
         '
         'Toolbox3
         '
+        Me.Toolbox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Toolbox3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Toolbox3.InnerControl = Me.txtMessages
         Me.Toolbox3.IsMinimized = False
-        Me.Toolbox3.Location = New System.Drawing.Point(289, 433)
+        Me.Toolbox3.Location = New System.Drawing.Point(289, 366)
         Me.Toolbox3.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
         Me.Toolbox3.Name = "Toolbox3"
-        Me.Toolbox3.Size = New System.Drawing.Size(741, 92)
+        Me.Toolbox3.Size = New System.Drawing.Size(741, 159)
         Me.Toolbox3.TabIndex = 14
         Me.Toolbox3.Title = "Output"
         Me.Toolbox3.Visible = False
@@ -602,7 +604,7 @@ Partial Class MainForm
         Me.txtMessages.Multiline = True
         Me.txtMessages.Name = "txtMessages"
         Me.txtMessages.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtMessages.Size = New System.Drawing.Size(741, 70)
+        Me.txtMessages.Size = New System.Drawing.Size(739, 135)
         Me.txtMessages.TabIndex = 13
         '
         'Splitter1
@@ -616,6 +618,7 @@ Partial Class MainForm
         '
         'Toolbox1
         '
+        Me.Toolbox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Toolbox1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Toolbox1.InnerControl = Me.TabControl1
         Me.Toolbox1.IsMinimized = False
@@ -629,6 +632,7 @@ Partial Class MainForm
         '
         'TabControl1
         '
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
@@ -636,37 +640,38 @@ Partial Class MainForm
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(285, 503)
+        Me.TabControl1.Size = New System.Drawing.Size(283, 501)
         Me.TabControl1.TabIndex = 15
         '
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.FileListBox1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 27)
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.TabPage1.Size = New System.Drawing.Size(277, 475)
+        Me.TabPage1.Size = New System.Drawing.Size(275, 470)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "File Explorer"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'FileListBox1
         '
+        Me.FileListBox1.BackColor = System.Drawing.SystemColors.Control
         Me.FileListBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FileListBox1.Location = New System.Drawing.Point(4, 3)
         Me.FileListBox1.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
         Me.FileListBox1.Name = "FileListBox1"
-        Me.FileListBox1.Size = New System.Drawing.Size(269, 469)
+        Me.FileListBox1.Size = New System.Drawing.Size(267, 464)
         Me.FileListBox1.TabIndex = 0
         '
         'TabPage3
         '
         Me.TabPage3.Controls.Add(Me.TreeView1)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 27)
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(277, 475)
+        Me.TabPage3.Size = New System.Drawing.Size(277, 472)
         Me.TabPage3.TabIndex = 1
         Me.TabPage3.Text = "Form explorer"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -682,7 +687,7 @@ Partial Class MainForm
         Me.TreeView1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.TreeView1.Name = "TreeView1"
         Me.TreeView1.SelectedImageIndex = 0
-        Me.TreeView1.Size = New System.Drawing.Size(277, 475)
+        Me.TreeView1.Size = New System.Drawing.Size(277, 472)
         Me.TreeView1.TabIndex = 0
         '
         'ctxForms
@@ -758,11 +763,11 @@ Partial Class MainForm
         'TabPage4
         '
         Me.TabPage4.Controls.Add(Me.TreeView2)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 27)
         Me.TabPage4.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.TabPage4.Size = New System.Drawing.Size(277, 475)
+        Me.TabPage4.Size = New System.Drawing.Size(277, 472)
         Me.TabPage4.TabIndex = 2
         Me.TabPage4.Text = "Project explorer"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -778,7 +783,7 @@ Partial Class MainForm
         Me.TreeView2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.TreeView2.Name = "TreeView2"
         Me.TreeView2.SelectedImageIndex = 0
-        Me.TreeView2.Size = New System.Drawing.Size(269, 469)
+        Me.TreeView2.Size = New System.Drawing.Size(269, 466)
         Me.TreeView2.TabIndex = 5
         '
         'ctxProj
@@ -1210,6 +1215,7 @@ Partial Class MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1030, 598)
         Me.Controls.Add(Me.ToolStripContainer1)
         Me.Controls.Add(Me.MenuStrip1)

@@ -32,6 +32,7 @@ Public Class MainForm
         End If
 
     End Sub
+    Private commands As New List(Of Command)
     Private Sub sc_PlaceChanged(ByVal loc As Point)
         tlstpColNo.Text = loc.X
         tlstpLineNo.Text = loc.Y
@@ -716,45 +717,61 @@ Public Class MainForm
             DE(ex)
         End Try
     End Sub
+    Private ExProcess As Process
     Private Sub exec_click(ByVal sender As Object, ByVal e As EventArgs)
         Try
-            Dim cmds() As String = sender.tag.split(Chr(255))
+            Dim cmds() As String = sender.tag.split("|")
             If cmds Is Nothing Then Exit Sub
 
-            If cmds(2) = "Y" Then
-                Dim SW As IO.StreamWriter
-                Dim SR As IO.StreamReader
-                Dim cmd As New Process
-                With cmd
-                    With .StartInfo
-                        .FileName = "cmd"
-                        .UseShellExecute = False
-                        .RedirectStandardInput = True
-                        .RedirectStandardOutput = True
-                        .CreateNoWindow = False
+            ExProcess = New Process()
+            'AddHandler ExProcess.OutputDataReceived, AddressOf Process_OutputReceived
+            'AddHandler ExProcess.ErrorDataReceived, AddressOf Process_ErrorReceived
 
-                    End With
-                    .Start()
-                    SR = .StandardOutput
-                    SW = .StandardInput
-                    SW.WriteLine(cmds(0) & " " & GetCommand(cmds(1)))
+            With ExProcess
+                With .StartInfo
 
-                    SW.Dispose()
-                    cmd.WaitForExit(1000)
-                    cmd.Dispose()
-                    Do Until SR.EndOfStream
-                        WriteSTatus(SR.ReadLine)
-                    Loop
-                    SR.Dispose()
+                    .FileName = GetCommand(cmds(0)) 'the command javac.exe
 
+                    .UseShellExecute = False
+                    .RedirectStandardInput = True
+                    .RedirectStandardOutput = True
+                    .RedirectStandardError = True
+                    .CreateNoWindow = True
+                    .WorkingDirectory = IO.Path.GetDirectoryName(TreeView2.SelectedNode.Tag)
+                    Dim args As String = GetCommand(cmds(1))
+                    .ArgumentList.Add(args) 'The path to hello world.java
                 End With
-            Else
-                Process.Start(cmds(0), GetCommand(cmds(1)))
-            End If
+
+                .Start()
+                .WaitForExit()
+                Dim output() As String = ExProcess.StandardOutput.ReadToEnd.Split(vbLf)
+                For Each ln As String In output
+                    If String.IsNullOrEmpty(ln) Then Continue For
+                    WriteSTatus(ln)
+                Next
+                Dim errs() As String = ExProcess.StandardError.ReadToEnd.Split(vbLf)
+
+                For Each ln As String In output
+                    If String.IsNullOrEmpty(ln) Then Continue For
+                    WriteSTatus(ln)
+                Next
+            End With
 
         Catch ex As Exception
             DE(ex)
+        Finally
+            ' ExProcess.Close()
+            'RemoveHandler ExProcess.OutputDataReceived, AddressOf Process_OutputReceived
+            'RemoveHandler ExProcess.ErrorDataReceived, AddressOf Process_ErrorReceived
         End Try
+    End Sub
+    Private Sub Process_ErrorReceived(sender As Object, data As DataReceivedEventArgs)
+        WriteSTatus("Error: " & data.Data)
+    End Sub
+
+    Private Sub Process_OutputReceived(sender As Object, data As DataReceivedEventArgs)
+
+        WriteSTatus(data.Data)
     End Sub
     Private Function GetCommand(ByVal cline As String) As String
         Dim projdir As String = ""
@@ -770,7 +787,7 @@ Public Class MainForm
             fnamewe = IO.Path.GetFileName(filename)
             fnamewoe = IO.Path.GetFileNameWithoutExtension(filename)
         End If
-        cline = cline.Replace("$PROJDIR", projdir)
+        cline = cline.Replace("PROJ_DIR", projdir)
         cline = cline.Replace("$FILE_FULL_PATH", filename)
         cline = cline.Replace("$FILE_NAME_WE", fnamewe)
         cline = cline.Replace("$FILE_NAME_WOE", fnamewoe)
@@ -784,6 +801,12 @@ Public Class MainForm
     Private Sub ClearExecConfig()
         ExecuteToolStripMenuItem.Enabled = False
         ExecuteToolStripMenuItem1.Enabled = False
+        For Each tlstp As ToolStripMenuItem In ExecuteToolStripMenuItem.DropDownItems
+            RemoveHandler tlstp.Click, AddressOf exec_click
+        Next
+        For Each tlstp As ToolStripMenuItem In ExecuteToolStripMenuItem1.DropDownItems
+            RemoveHandler tlstp.Click, AddressOf exec_click
+        Next
         ExecuteToolStripMenuItem.DropDownItems.Clear()
         ExecuteToolStripMenuItem1.DropDownItems.Clear()
     End Sub
@@ -813,7 +836,7 @@ Public Class MainForm
                 If ln.Length < 8 Then Continue For 'just for the sake of having good length not less than 5,6
                 If ln.Substring(0, 8) = "COMMAND:" Then
                     Dim cmd1 As String = ln.Substring(8)
-                    Dim cmd() As String = cmd1.Split(Chr(254))
+                    Dim cmd() As String = cmd1.Split("!")
                     Dim cmdname As String = cmd(0)
                     Dim drpitem, drpitm2 As New ToolStripMenuItem(cmdname)
                     drpitem.Tag = cmd(1)
@@ -829,6 +852,9 @@ Public Class MainForm
             If ExecuteToolStripMenuItem.DropDownItems.Count > 0 Then
                 ExecuteToolStripMenuItem.Enabled = True
                 ExecuteToolStripMenuItem1.Enabled = True
+            Else
+                ExecuteToolStripMenuItem.Enabled = False
+                ExecuteToolStripMenuItem1.Enabled = False
             End If
             CloseProjBut.Enabled = True
 
@@ -1484,7 +1510,7 @@ innerexit:
                     If LI Is Nothing Then Continue For
                     sw.WriteLine("COMMAND:" & LI)
                     Dim cmd1 As String = LI
-                    Dim cmd() As String = cmd1.Split(Chr(254))
+                    Dim cmd() As String = cmd1.Split(ChrW(254))
                     Dim cmdname As String = cmd(0)
                     Dim drpitem, drpitm2 As New ToolStripMenuItem(cmdname)
                     drpitem.Tag = cmd(1)
@@ -2092,9 +2118,11 @@ innerexit:
 
     Private Sub TreeView1_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TreeView1.MouseClick
         Try
-            Dim ht As TreeViewHitTestInfo = TreeView1.HitTest(e.Location)
-            If Not ht.Node Is Nothing Then
-                TreeView1.SelectedNode = ht.Node
+            If e.Button = MouseButtons.Right Then
+                Dim ht As TreeViewHitTestInfo = TreeView1.HitTest(e.Location)
+                If Not ht.Node Is Nothing Then
+                    TreeView1.SelectedNode = ht.Node
+                End If
             End If
         Catch ex As Exception
             DE(ex)
@@ -2103,8 +2131,10 @@ innerexit:
 
     Private Sub TreeView1_NodeMouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.TreeNodeMouseClickEventArgs) Handles TreeView1.NodeMouseDoubleClick
         Try
-            If e.Node.ImageIndex = 3 Or e.Node.ImageIndex = 4 Then
-                OpenFile(e.Node.Tag)
+            If e.Button = MouseButtons.Left Then
+                If e.Node.ImageIndex = 3 Or e.Node.ImageIndex = 4 Then
+                    OpenFile(e.Node.Tag)
+                End If
             End If
         Catch ex As Exception
             DE(ex)
@@ -2265,5 +2295,11 @@ innerexit:
         ProjectToolStripMenuItem.Enabled = False
         LanguageToolStripMenuItem.Enabled = False
         TextFunctionsToolStripMenuItem.Enabled = False
+    End Sub
+
+    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
+
+        Toolbox1.Title = TabControl1.SelectedTab.Text
+
     End Sub
 End Class

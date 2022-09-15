@@ -62,9 +62,10 @@ Partial Class Comparator
         'butRemoveDups
         '
         Me.butRemoveDups.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.butRemoveDups.Location = New System.Drawing.Point(422, 3)
+        Me.butRemoveDups.Location = New System.Drawing.Point(492, 3)
+        Me.butRemoveDups.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.butRemoveDups.Name = "butRemoveDups"
-        Me.butRemoveDups.Size = New System.Drawing.Size(146, 24)
+        Me.butRemoveDups.Size = New System.Drawing.Size(170, 28)
         Me.butRemoveDups.TabIndex = 0
         Me.butRemoveDups.Text = "&Remove Dups"
         Me.butRemoveDups.UseVisualStyleBackColor = True
@@ -72,9 +73,10 @@ Partial Class Comparator
         'butCompare
         '
         Me.butCompare.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.butCompare.Location = New System.Drawing.Point(574, 3)
+        Me.butCompare.Location = New System.Drawing.Point(670, 3)
+        Me.butCompare.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.butCompare.Name = "butCompare"
-        Me.butCompare.Size = New System.Drawing.Size(124, 24)
+        Me.butCompare.Size = New System.Drawing.Size(145, 28)
         Me.butCompare.TabIndex = 1
         Me.butCompare.Text = "&Compare"
         Me.butCompare.UseVisualStyleBackColor = True
@@ -84,8 +86,9 @@ Partial Class Comparator
         Me.lblFirst.AutoSize = True
         Me.lblFirst.Dock = System.Windows.Forms.DockStyle.Top
         Me.lblFirst.Location = New System.Drawing.Point(0, 0)
+        Me.lblFirst.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblFirst.Name = "lblFirst"
-        Me.lblFirst.Size = New System.Drawing.Size(41, 13)
+        Me.lblFirst.Size = New System.Drawing.Size(45, 15)
         Me.lblFirst.TabIndex = 0
         Me.lblFirst.Text = "&Big List"
         '
@@ -94,17 +97,19 @@ Partial Class Comparator
         Me.lblSecondList.AutoSize = True
         Me.lblSecondList.Dock = System.Windows.Forms.DockStyle.Top
         Me.lblSecondList.Location = New System.Drawing.Point(0, 0)
+        Me.lblSecondList.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSecondList.Name = "lblSecondList"
-        Me.lblSecondList.Size = New System.Drawing.Size(51, 13)
+        Me.lblSecondList.Size = New System.Drawing.Size(57, 15)
         Me.lblSecondList.TabIndex = 0
         Me.lblSecondList.Text = "&Small List"
         '
         'lblResult
         '
         Me.lblResult.AutoSize = True
-        Me.lblResult.Location = New System.Drawing.Point(3, 9)
+        Me.lblResult.Location = New System.Drawing.Point(4, 10)
+        Me.lblResult.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblResult.Name = "lblResult"
-        Me.lblResult.Size = New System.Drawing.Size(37, 13)
+        Me.lblResult.Size = New System.Drawing.Size(39, 15)
         Me.lblResult.TabIndex = 2
         Me.lblResult.Text = "R&esult"
         '
@@ -147,27 +152,29 @@ Partial Class Comparator
         '
         Me.txtList2.ContextMenuStrip = Me.ctxMain
         Me.txtList2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtList2.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtList2.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtList2.HideSelection = False
-        Me.txtList2.Location = New System.Drawing.Point(0, 13)
+        Me.txtList2.Location = New System.Drawing.Point(0, 15)
+        Me.txtList2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtList2.Name = "txtList2"
-        Me.txtList2.Size = New System.Drawing.Size(464, 222)
+        Me.txtList2.Size = New System.Drawing.Size(541, 256)
         Me.txtList2.TabIndex = 1
         Me.txtList2.Text = "PRAVEEN" & Global.Microsoft.VisualBasic.ChrW(10) & "VIJAY" & Global.Microsoft.VisualBasic.ChrW(10) & "PRAVEEN" & Global.Microsoft.VisualBasic.ChrW(10) & "SHIVA" & Global.Microsoft.VisualBasic.ChrW(10) & "RAVI" & Global.Microsoft.VisualBasic.ChrW(10) & "NAG" & Global.Microsoft.VisualBasic.ChrW(10) & "ANIL" & Global.Microsoft.VisualBasic.ChrW(10) & "VIJAY" & Global.Microsoft.VisualBasic.ChrW(10) & "GURU" & Global.Microsoft.VisualBasic.ChrW(10) & "RAGHU" & Global.Microsoft.VisualBasic.ChrW(10) & "HEMA" & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tlstpMessage, Me.PGBCOMPARE})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 546)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 631)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(702, 22)
+        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 16, 0)
+        Me.StatusStrip1.Size = New System.Drawing.Size(819, 24)
         Me.StatusStrip1.TabIndex = 8
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'tlstpMessage
         '
         Me.tlstpMessage.Name = "tlstpMessage"
-        Me.tlstpMessage.Size = New System.Drawing.Size(385, 17)
+        Me.tlstpMessage.Size = New System.Drawing.Size(450, 19)
         Me.tlstpMessage.Spring = True
         Me.tlstpMessage.Text = "Ready"
         Me.tlstpMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -175,14 +182,15 @@ Partial Class Comparator
         'PGBCOMPARE
         '
         Me.PGBCOMPARE.Name = "PGBCOMPARE"
-        Me.PGBCOMPARE.Size = New System.Drawing.Size(300, 16)
+        Me.PGBCOMPARE.Size = New System.Drawing.Size(350, 18)
         '
         'butClearLists
         '
         Me.butClearLists.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.butClearLists.Location = New System.Drawing.Point(256, 3)
+        Me.butClearLists.Location = New System.Drawing.Point(299, 3)
+        Me.butClearLists.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.butClearLists.Name = "butClearLists"
-        Me.butClearLists.Size = New System.Drawing.Size(160, 24)
+        Me.butClearLists.Size = New System.Drawing.Size(187, 28)
         Me.butClearLists.TabIndex = 3
         Me.butClearLists.Text = "C&lear lists"
         Me.butClearLists.UseVisualStyleBackColor = True
@@ -191,6 +199,7 @@ Partial Class Comparator
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainer1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.SplitContainer1.Name = "SplitContainer1"
         Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -202,14 +211,16 @@ Partial Class Comparator
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.txtResult)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Panel1)
-        Me.SplitContainer1.Size = New System.Drawing.Size(702, 546)
-        Me.SplitContainer1.SplitterDistance = 235
+        Me.SplitContainer1.Size = New System.Drawing.Size(819, 631)
+        Me.SplitContainer1.SplitterDistance = 271
+        Me.SplitContainer1.SplitterWidth = 5
         Me.SplitContainer1.TabIndex = 9
         '
         'SplitContainer2
         '
         Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer2.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainer2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.SplitContainer2.Name = "SplitContainer2"
         '
         'SplitContainer2.Panel1
@@ -221,19 +232,21 @@ Partial Class Comparator
         '
         Me.SplitContainer2.Panel2.Controls.Add(Me.txtList2)
         Me.SplitContainer2.Panel2.Controls.Add(Me.lblSecondList)
-        Me.SplitContainer2.Size = New System.Drawing.Size(702, 235)
-        Me.SplitContainer2.SplitterDistance = 234
+        Me.SplitContainer2.Size = New System.Drawing.Size(819, 271)
+        Me.SplitContainer2.SplitterDistance = 273
+        Me.SplitContainer2.SplitterWidth = 5
         Me.SplitContainer2.TabIndex = 0
         '
         'txtList1
         '
         Me.txtList1.ContextMenuStrip = Me.ctxMain
         Me.txtList1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtList1.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtList1.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtList1.HideSelection = False
-        Me.txtList1.Location = New System.Drawing.Point(0, 13)
+        Me.txtList1.Location = New System.Drawing.Point(0, 15)
+        Me.txtList1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtList1.Name = "txtList1"
-        Me.txtList1.Size = New System.Drawing.Size(234, 222)
+        Me.txtList1.Size = New System.Drawing.Size(273, 256)
         Me.txtList1.TabIndex = 4
         Me.txtList1.Text = "VIJAY" & Global.Microsoft.VisualBasic.ChrW(10) & "GURU" & Global.Microsoft.VisualBasic.ChrW(10) & "RAGHU" & Global.Microsoft.VisualBasic.ChrW(10) & "PRAMILA" & Global.Microsoft.VisualBasic.ChrW(10) & "PRAVEEN" & Global.Microsoft.VisualBasic.ChrW(10) & "VIJAY" & Global.Microsoft.VisualBasic.ChrW(10) & "PRAVEEN" & Global.Microsoft.VisualBasic.ChrW(10) & "SHIVA" & Global.Microsoft.VisualBasic.ChrW(10) & "SRIDHAR" & Global.Microsoft.VisualBasic.ChrW(10) & "RAVI" & Global.Microsoft.VisualBasic.ChrW(10) & "NAG" & Global.Microsoft.VisualBasic.ChrW(10) & "ANIL" & Global.Microsoft.VisualBasic.ChrW(10)
         '
@@ -241,11 +254,12 @@ Partial Class Comparator
         '
         Me.txtResult.ContextMenuStrip = Me.ctxMain
         Me.txtResult.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtResult.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtResult.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtResult.HideSelection = False
-        Me.txtResult.Location = New System.Drawing.Point(0, 28)
+        Me.txtResult.Location = New System.Drawing.Point(0, 32)
+        Me.txtResult.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtResult.Name = "txtResult"
-        Me.txtResult.Size = New System.Drawing.Size(702, 279)
+        Me.txtResult.Size = New System.Drawing.Size(819, 323)
         Me.txtResult.TabIndex = 0
         Me.txtResult.Text = ""
         '
@@ -258,28 +272,31 @@ Partial Class Comparator
         Me.Panel1.Controls.Add(Me.butCompare)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(702, 28)
+        Me.Panel1.Size = New System.Drawing.Size(819, 32)
         Me.Panel1.TabIndex = 9
         '
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label1.Location = New System.Drawing.Point(52, 0)
+        Me.Label1.Location = New System.Drawing.Point(61, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(198, 30)
+        Me.Label1.Size = New System.Drawing.Size(231, 34)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "I can remove duplicates from Big list and can compare Big and Small lists"
         '
         'Comparator
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(702, 568)
+        Me.ClientSize = New System.Drawing.Size(819, 655)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Name = "Comparator"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False

@@ -63,7 +63,7 @@ Public Class ConfigurationParms
             MsgBox("The name cannot be empty", MsgBoxStyle.Exclamation)
             Exit Sub
         End If
-        Dim cmd As String = txtCommandName.Text & Chr(254) & txtProgramname.Text & Chr(255) & txtCommandline.Text & Chr(255) & IIf(chkCapture.Checked, "Y", "N")
+        Dim cmd As String = txtCommandName.Text & "!" & txtProgramname.Text & "|" & txtCommandline.Text
         lstCommands.Items.Add(cmd)
     End Sub
     Public Property Commands() As String()

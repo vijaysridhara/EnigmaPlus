@@ -363,7 +363,7 @@ Public Class Buntilla
             'sw.Write(Me.Text)
             'sw.Close()
             'sw.Dispose()
-            SaveToFile(fname, System.Text.Encoding.UTF8)
+            SaveToFile(fname, System.Text.Encoding.ASCII)
             _isDirty = False
             _filepath = fname
             RaiseEvent FileSaved(Me)
