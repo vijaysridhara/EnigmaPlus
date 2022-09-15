@@ -2302,4 +2302,49 @@ innerexit:
         Toolbox1.Title = TabControl1.SelectedTab.Text
 
     End Sub
+
+    Private Sub Toolbox1_Load(sender As Object, e As EventArgs) Handles Toolbox1.Load
+
+    End Sub
+
+    Private Sub Toolbox1_DockChanged(sender As Object, e As EventArgs) Handles Toolbox1.DockChanged
+
+    End Sub
+
+    Private Sub Toolbox1_Maximized() Handles Toolbox1.Maximized
+        Toolbox1.SendToBack()
+        Splitter1.BringToFront()
+        Splitter1.Show()
+
+    End Sub
+
+    Private Sub Toolbox1_Minimized() Handles Toolbox1.Minimized
+        Toolbox1.SendToBack()
+        Splitter1.BringToFront()
+        Splitter1.Hide()
+
+    End Sub
+
+    Private Sub Toolbox3_Minimized() Handles Toolbox3.Minimized
+        Toolbox3.SendToBack()
+        Splitter3.Hide()
+    End Sub
+
+    Private Sub Toolbox3_Maximized() Handles Toolbox3.Maximized
+        Toolbox3.SendToBack()
+        Splitter3.BringToFront()
+        Splitter3.Show()
+    End Sub
+
+    Private Sub Toolbox1_Shown() Handles Toolbox1.Shown
+        Toolbox1.SendToBack()
+        Splitter1.BringToFront()
+        Splitter1.Show()
+    End Sub
+
+    Private Sub Toolbox3_Shown() Handles Toolbox3.Shown
+        Toolbox3.SendToBack()
+        Splitter3.BringToFront()
+        Splitter3.Show()
+    End Sub
 End Class

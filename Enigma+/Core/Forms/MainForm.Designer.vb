@@ -671,7 +671,7 @@ Partial Class MainForm
         Me.TabPage3.Location = New System.Drawing.Point(4, 27)
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(277, 472)
+        Me.TabPage3.Size = New System.Drawing.Size(275, 470)
         Me.TabPage3.TabIndex = 1
         Me.TabPage3.Text = "Form explorer"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -687,7 +687,7 @@ Partial Class MainForm
         Me.TreeView1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.TreeView1.Name = "TreeView1"
         Me.TreeView1.SelectedImageIndex = 0
-        Me.TreeView1.Size = New System.Drawing.Size(277, 472)
+        Me.TreeView1.Size = New System.Drawing.Size(275, 470)
         Me.TreeView1.TabIndex = 0
         '
         'ctxForms
@@ -767,7 +767,7 @@ Partial Class MainForm
         Me.TabPage4.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.TabPage4.Size = New System.Drawing.Size(277, 472)
+        Me.TabPage4.Size = New System.Drawing.Size(275, 470)
         Me.TabPage4.TabIndex = 2
         Me.TabPage4.Text = "Project explorer"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -783,7 +783,7 @@ Partial Class MainForm
         Me.TreeView2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.TreeView2.Name = "TreeView2"
         Me.TreeView2.SelectedImageIndex = 0
-        Me.TreeView2.Size = New System.Drawing.Size(269, 466)
+        Me.TreeView2.Size = New System.Drawing.Size(267, 464)
         Me.TreeView2.TabIndex = 5
         '
         'ctxProj
