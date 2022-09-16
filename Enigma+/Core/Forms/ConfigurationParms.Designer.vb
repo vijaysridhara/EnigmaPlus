@@ -58,19 +58,22 @@ Partial Class ConfigurationParms
         '
         'txtCommandName
         '
+        Me.txtCommandName.Font = New System.Drawing.Font("Lucida Console", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtCommandName.Location = New System.Drawing.Point(499, 42)
         Me.txtCommandName.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtCommandName.Name = "txtCommandName"
-        Me.txtCommandName.Size = New System.Drawing.Size(140, 23)
+        Me.txtCommandName.Size = New System.Drawing.Size(140, 18)
         Me.txtCommandName.TabIndex = 3
         '
         'txtCommandline
         '
         Me.txtCommandline.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.txtCommandline.Font = New System.Drawing.Font("Lucida Console", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtCommandline.Location = New System.Drawing.Point(499, 133)
         Me.txtCommandline.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.txtCommandline.Multiline = True
         Me.txtCommandline.Name = "txtCommandline"
-        Me.txtCommandline.Size = New System.Drawing.Size(237, 23)
+        Me.txtCommandline.Size = New System.Drawing.Size(237, 90)
         Me.txtCommandline.TabIndex = 8
         '
         'ContextMenuStrip1
@@ -111,7 +114,7 @@ Partial Class ConfigurationParms
         '
         'butAdd
         '
-        Me.butAdd.Location = New System.Drawing.Point(499, 189)
+        Me.butAdd.Location = New System.Drawing.Point(498, 229)
         Me.butAdd.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.butAdd.Name = "butAdd"
         Me.butAdd.Size = New System.Drawing.Size(37, 27)
@@ -121,7 +124,7 @@ Partial Class ConfigurationParms
         '
         'butRemove
         '
-        Me.butRemove.Location = New System.Drawing.Point(499, 223)
+        Me.butRemove.Location = New System.Drawing.Point(498, 263)
         Me.butRemove.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.butRemove.Name = "butRemove"
         Me.butRemove.Size = New System.Drawing.Size(37, 27)
@@ -131,7 +134,7 @@ Partial Class ConfigurationParms
         '
         'butOK
         '
-        Me.butOK.Location = New System.Drawing.Point(555, 230)
+        Me.butOK.Location = New System.Drawing.Point(554, 270)
         Me.butOK.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.butOK.Name = "butOK"
         Me.butOK.Size = New System.Drawing.Size(88, 27)
@@ -142,7 +145,7 @@ Partial Class ConfigurationParms
         'butCancel
         '
         Me.butCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.butCancel.Location = New System.Drawing.Point(650, 230)
+        Me.butCancel.Location = New System.Drawing.Point(649, 270)
         Me.butCancel.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.butCancel.Name = "butCancel"
         Me.butCancel.Size = New System.Drawing.Size(88, 27)
@@ -162,10 +165,11 @@ Partial Class ConfigurationParms
         '
         'txtProgramname
         '
+        Me.txtProgramname.Font = New System.Drawing.Font("Lucida Console", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtProgramname.Location = New System.Drawing.Point(499, 88)
         Me.txtProgramname.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtProgramname.Name = "txtProgramname"
-        Me.txtProgramname.Size = New System.Drawing.Size(143, 23)
+        Me.txtProgramname.Size = New System.Drawing.Size(143, 18)
         Me.txtProgramname.TabIndex = 5
         '
         'Label1

@@ -1510,7 +1510,7 @@ innerexit:
                     If LI Is Nothing Then Continue For
                     sw.WriteLine("COMMAND:" & LI)
                     Dim cmd1 As String = LI
-                    Dim cmd() As String = cmd1.Split(ChrW(254))
+                    Dim cmd() As String = cmd1.Split("!")
                     Dim cmdname As String = cmd(0)
                     Dim drpitem, drpitm2 As New ToolStripMenuItem(cmdname)
                     drpitem.Tag = cmd(1)

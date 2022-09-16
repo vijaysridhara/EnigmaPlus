@@ -50,6 +50,10 @@ Public Class ConfigurationParms
             butRemove.Enabled = False
         Else
             butRemove.Enabled = True
+            Dim cms() As String = lstCommands.SelectedItem.ToString.Split("!")
+            txtCommandName.Text = cms(0)
+            txtProgramname.Text = cms(1).Split("|")(0)
+            txtCommandline.Text = cms(1).Split("|")(1)
         End If
     End Sub
 
@@ -64,7 +68,20 @@ Public Class ConfigurationParms
             Exit Sub
         End If
         Dim cmd As String = txtCommandName.Text & "!" & txtProgramname.Text & "|" & txtCommandline.Text
-        lstCommands.Items.Add(cmd)
+        If lstCommands.SelectedItem Is Nothing Then
+            lstCommands.Items.Add(cmd)
+        Else
+            Dim cms() As String = lstCommands.SelectedItem.ToString.Split("!")
+            If cms(0).Equals(txtCommandName.Text) Then
+                Dim ix As Integer = lstCommands.SelectedIndex
+                lstCommands.Items.RemoveAt(ix)
+                lstCommands.Items.Insert(ix, cmd)
+                lstCommands.SelectedIndex = ix
+            Else
+                lstCommands.Items.Add(cmd)
+                lstCommands.SelectedIndex = lstCommands.Items.Count - 1
+            End If
+        End If
     End Sub
     Public Property Commands() As String()
         Get
