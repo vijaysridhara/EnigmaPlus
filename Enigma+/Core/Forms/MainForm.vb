@@ -737,9 +737,11 @@ Public Class MainForm
                     .RedirectStandardOutput = True
                     .RedirectStandardError = True
                     .CreateNoWindow = True
+
                     .WorkingDirectory = IO.Path.GetDirectoryName(TreeView2.SelectedNode.Tag)
                     Dim args As String = GetCommand(cmds(1))
                     .ArgumentList.Add(args) 'The path to hello world.java
+                    WriteSTatus("Sending command: " & cmds(0) & " " & args)
                 End With
 
                 .Start()
